@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-origins = ["http://frontend:5173"]
+origins = ["http://localhost:30330"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -14,6 +14,8 @@ app.add_middleware(
 )
 
 queue = {}
+global first
+first = 1
 
 @app.get('/queue/get')
 def get():
@@ -21,11 +23,17 @@ def get():
 
 @app.post('/queue/create')
 def create():
-    person = "Person" + str(len(queue) + 1)
-    queue[len(queue) + 1] = person
+    if len(queue) != 0:
+        person = "Person" + str(list(queue.keys())[len(queue) - 1] + 1)
+        queue[list(queue.keys())[len(queue) - 1] + 1] = person
+    else:
+        person = "Person1"
+        queue[1] = person
     return "Create successfully"
 
 @app.delete('/queue/delete')
 def delete():
-    queue.pop(len(queue), None)
+    global first
+    queue.pop(first, None)
+    first += 1
     return "Delete successfully"
