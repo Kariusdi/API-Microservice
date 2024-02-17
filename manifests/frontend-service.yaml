@@ -7,10 +7,13 @@ metadata:
   labels:
     app: frontend
 spec:
+  type: NodePort
   selector:
     app: frontend
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8000
-  type: LoadBalancer
+    #- protocol: TCP
+    - port: 80
+      targetPort: 5173
+      # Optional field# By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
+      nodePort: 30330
+  #type: LoadBalancer

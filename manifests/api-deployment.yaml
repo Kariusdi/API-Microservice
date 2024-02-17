@@ -2,12 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api
-  namespace: konmake
+  #namespace: konmake
   labels:
-    role: api
-    env: demo
+    app: api
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -15,14 +14,15 @@ spec:
       maxUnavailable: 25%
   selector:
     matchLabels:
-      role: api
+      app: api
   template:
     metadata:
       labels:
-        role: api
+        app: api
     spec:
-    containers:
-    - name: api
-      image: kariusdi/fastapi_microservice:v1.0
-      ports:
-      - containerPort: 8000
+      containers:
+      - name: api
+        image: kariusdi/fastapi_microservice:v1.3
+        ports:
+        - containerPort: 8000
+
