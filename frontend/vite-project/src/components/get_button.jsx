@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../App.css'
 
 const GetButton = () => {
   const [data, setData] = useState([]);
@@ -17,7 +18,7 @@ const GetButton = () => {
 
       const result = await response.json();
       console.log(result)
-      setData(result);
+      setData(result)
     } catch (err) {
       setErr(err.message);
     } finally {
@@ -28,10 +29,12 @@ const GetButton = () => {
   return (
     <div>
       {err && <h2>{err}</h2>}
+      {data && <h4>{JSON.stringify(data, null, 2)}</h4>}
 
-      <button onClick={handleClick}>Get Queue</button>
+      <button id='get' onClick={handleClick}>Get Queue</button>
 
       {isLoading && <h2>Loading...</h2>}
+
     </div>
   );
 };

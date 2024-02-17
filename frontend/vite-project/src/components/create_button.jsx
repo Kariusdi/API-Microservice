@@ -35,7 +35,7 @@ const CreateButton = () => {
     <div>
       {err && <h2>{err}</h2>}
 
-      <button onClick={handlePostClick}>Add Queue</button>
+      <button id='add' onClick={handlePostClick}>Add Queue</button>
 
       {isLoading && <h2>Loading...</h2>}
     </div>

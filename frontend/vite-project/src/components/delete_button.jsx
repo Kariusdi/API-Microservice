@@ -21,8 +21,6 @@ const DeleteButton = () => {
         throw new Error(`Error! status: ${response.status}`);
       }
 
-      // Handle the result as needed
-      console.log('Successfully deleted');
     } catch (err) {
       setErr(err.message);
     } finally {
@@ -34,9 +32,10 @@ const DeleteButton = () => {
     <div>
       {err && <h2>{err}</h2>}
 
-      <button onClick={handleDeleteClick}>Pop Queue</button>
+      <button id='del' onClick={handleDeleteClick}>Pop Queue</button>
 
       {isLoading && <h2>Loading...</h2>}
+
     </div>
   );
 };

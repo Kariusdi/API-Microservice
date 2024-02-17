@@ -40,3 +40,17 @@
 .read-the-docs {
   color: #888;
 }
+
+#get {
+  background-color: rebeccapurple;
+}
+
+#add {
+  background-color: goldenrod;;
+  color: #000;
+}
+
+#del {
+  background-color: lightblue;
+  color: #000;
+}
