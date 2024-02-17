@@ -21,8 +21,8 @@ spec:
       labels:
         role: api
     spec:
-    containers:
-    - name: frontend
-      image: kariusdi/kariusdi/reactapp_microservice:v1.0
-      ports:
-      - containerPort: 5173
+      containers:
+      - name: frontend
+        image: kariusdi/kariusdi/reactapp_microservice:v1.0
+        ports:
+        - containerPort: 5173

@@ -9,7 +9,7 @@ const DeleteButton = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8000/queue/delete', {
+      const response = await fetch('http://api:8000/queue/delete', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ const DeleteButton = () => {
 
   return (
     <div>
-      {err && <h2>{err}</h2>}
+      {/* {err && <h2>{err}</h2>} */}
 
       <button id='del' onClick={handleDeleteClick}>Pop Queue</button>
 

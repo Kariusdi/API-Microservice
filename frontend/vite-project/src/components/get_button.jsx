@@ -10,7 +10,7 @@ const GetButton = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8000/queue/get');
+      const response = await fetch('http://api:8000/queue/get');
 
       if (!response.ok) {
         throw new Error(`Error! status: ${response.status}`);
@@ -28,7 +28,7 @@ const GetButton = () => {
 
   return (
     <div>
-      {err && <h2>{err}</h2>}
+      {/* {err && <h2>{err}</h2>} */}
       {data && <h4>{JSON.stringify(data, null, 2)}</h4>}
 
       <button id='get' onClick={handleClick}>Get Queue</button>

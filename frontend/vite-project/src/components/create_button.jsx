@@ -9,7 +9,7 @@ const CreateButton = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8000/queue/create', {
+      const response = await fetch('http://api:8000/queue/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ const CreateButton = () => {
 
   return (
     <div>
-      {err && <h2>{err}</h2>}
+      {/* {err && <h2>{err}</h2>} */}
 
       <button id='add' onClick={handlePostClick}>Add Queue</button>
 
