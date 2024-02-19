@@ -32,6 +32,7 @@ metadata:
   name: frontend
   labels:
     app: frontend
+    env: demo
 spec:
   replicas: 2
   strategy:
@@ -41,7 +42,7 @@ spec:
       maxUnavailable: 25%
   selector:
     matchLabels:
-      role: frontend
+      app: frontend
   template:
     metadata:
       labels:
