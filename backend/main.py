@@ -34,6 +34,9 @@ def create():
 @app.delete('/queue/delete')
 def delete():
     global first
+    if len(queue) != 0:
+        first = 1
+    else :
+        first += 1
     queue.pop(first, None)
-    first += 1
     return "Delete successfully"
