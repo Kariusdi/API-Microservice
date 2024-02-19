@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend-api-connector
+  namespace: default
+spec:
+  containers:
+  - name: connector
+    image: connector-image
+    imagePullPolicy: IfNotPresent
+    env:
+      - name: API_HOST
+        value: "api"
+      - name: API_PORT
+        value: "3000"
+      - name: FRONTEND_HOST
+        value: "frontend"
+      - name: FRONTEND_PORT
+        value: "80"
