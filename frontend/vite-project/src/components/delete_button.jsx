@@ -9,7 +9,8 @@ const DeleteButton = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:32409/queue/delete', {
+      // http://localhost:32409/queue/delete
+      const response = await fetch('http://api/queue/delete', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
