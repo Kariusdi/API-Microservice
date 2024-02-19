@@ -22,6 +22,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: kariusdi/reactapp_microservice:v1.3
+        image: kariusdi/reactapp_microservice:v1.4
         ports:
         - containerPort: 5173
