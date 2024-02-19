@@ -31,8 +31,4 @@ spec:
       targetPort: 5173
       # Optional field# By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
       nodePort: 30330
-    - name: api
-      port: 80
-      targetPort: 8000
-      nodePort: 32409
   # type: LoadBalancer
