@@ -22,5 +22,10 @@ spec:
       containers:
       - name: frontend
         image: kariusdi/reactapp_microservice:v1.4
+        env:
+          - name: API_HOST
+            value: api  # Use the service name created for API
+          - name: API_PORT
+            value: "3000"
         ports:
         - containerPort: 5173

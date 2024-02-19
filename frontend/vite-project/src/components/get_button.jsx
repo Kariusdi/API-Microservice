@@ -10,7 +10,7 @@ const GetButton = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://api/queue/get');
+      const response = await fetch('http://api:32409/queue/get');
 
       if (!response.ok) {
         throw new Error(`Error! status: ${response.status}`);
