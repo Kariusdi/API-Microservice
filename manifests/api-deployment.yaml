@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
       - name: api
-        image: kariusdi/fastapi_microservice:v2.0
+        image: kariusdi/fastapi_microservice:v1.6
         ports:
         - containerPort: 8000
