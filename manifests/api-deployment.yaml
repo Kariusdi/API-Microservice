@@ -22,11 +22,6 @@ spec:
       containers:
       - name: api
         image: kariusdi/fastapi_microservice:v2.1
-        env:
-          - name: FRONTEND_HOST
-            value: frontend  # Use the service name created for API
-          - name: FRONTEND_PORT
-            value: "80"
         ports:
         - containerPort: 8000
 
