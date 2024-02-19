@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: kariusdi/reactapp_microservice:v2.2
+        image: kariusdi/reactapp_microservice:v2.1
         env:
           - name: API_HOST
             value: api  # Use the service name created for API
