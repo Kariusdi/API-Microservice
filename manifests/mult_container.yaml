@@ -5,12 +5,12 @@ metadata:
 spec:
   containers:
     - name: api
-      image: kariusdi/fastapi_microservice:v2.1
+      image: kariusdi/fastapi_microservice:v3.2
       ports:
         - name: api 
           containerPort: 8000
     - name: frontend
-      image: kariusdi/reactapp_microservice:v3.1
+      image: kariusdi/reactapp_microservice:v3.2
       ports:
        - name: frontend 
          containerPort: 5173
