@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api
-  #namespace: konmake
   labels:
     app: api
 spec:
@@ -22,7 +21,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: kariusdi/fastapi_microservice:v1.6
+        image: kariusdi/fastapi_microservice:v1.3
         ports:
         - containerPort: 8000
 
