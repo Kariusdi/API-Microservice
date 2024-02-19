@@ -24,4 +24,3 @@ spec:
         image: kariusdi/fastapi_microservice:v2.1
         ports:
         - containerPort: 8000
-
