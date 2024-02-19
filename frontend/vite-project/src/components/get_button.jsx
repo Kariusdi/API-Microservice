@@ -10,11 +10,7 @@ const GetButton = () => {
     setIsLoading(true);
 
     try {
-<<<<<<< HEAD
-      const response = await fetch('http://api:32409/queue/get');
-=======
-      const response = await fetch('http://api:8000/queue/get');
->>>>>>> origin/main
+      const response = await fetch('http://api/queue/get');
 
       if (!response.ok) {
         throw new Error(`Error! status: ${response.status}`);
