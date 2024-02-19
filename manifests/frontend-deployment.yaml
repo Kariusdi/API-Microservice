@@ -24,3 +24,16 @@ spec:
         image: kariusdi/reactapp_microservice:v1.3
         ports:
         - containerPort: 5173
+        livenessProbe:
+          httpGet:
+            path: /ok
+            port: 5173
+          initialDelaySeconds: 2
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+             path: /ok
+             port: 5173
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          successThreshold: 1
