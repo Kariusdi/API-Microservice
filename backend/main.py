@@ -13,7 +13,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-queue = {}
+queue = []
 global first
 first = 1
 
@@ -23,20 +23,11 @@ def get():
 
 @app.post('/queue/create')
 def create():
-    if len(queue) != 0:
-        person = "Person" + str(list(queue.keys())[len(queue) - 1] + 1)
-        queue[list(queue.keys())[len(queue) - 1] + 1] = person
-    else:
-        person = "Person1"
-        queue[1] = person
+    person = "Person" + str(len(queue) + 1)
+    queue.append(person)
     return "Create successfully"
 
 @app.delete('/queue/delete')
 def delete():
-    global first
-    if len(queue) != 0:
-        first = 1
-    else :
-        first += 1
-    queue.pop(first, None)
+    queue.pop(0)
     return "Delete successfully"
