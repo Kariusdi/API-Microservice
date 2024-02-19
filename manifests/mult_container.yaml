@@ -4,12 +4,12 @@ metadata:
   name: queue
 spec:
   containers:
-    - name: api
+    - name: api-container
       image: kariusdi/fastapi_microservice:v3.2
       ports:
         - name: api 
           containerPort: 8000
-    - name: frontend
+    - name: frontend-container
       image: kariusdi/reactapp_microservice:v3.2
       ports:
        - name: frontend 
