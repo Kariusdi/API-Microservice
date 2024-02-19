@@ -9,7 +9,11 @@ const CreateButton = () => {
     setIsLoading(true);
 
     try {
+<<<<<<< HEAD
       const response = await fetch('http://api:32409/queue/create', {
+=======
+      const response = await fetch('http://api:8000/queue/create', {
+>>>>>>> origin/main
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
