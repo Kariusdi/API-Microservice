@@ -1,40 +1,11 @@
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: frontend
-#   namespace: konmake
-#   labels:
-#     app: frontend
-# spec:
-#   replicas: 1
-#   strategy:
-#     type: RollingUpdate
-#     rollingUpdate:
-#       maxSurge: 1
-#       maxUnavailable: 25%
-#   selector:
-#     matchLabels:
-#       app: frontend
-#   template:
-#     metadata:
-#       labels:
-#         app: frontend
-#     spec:
-#       containers:
-#       - name: frontend
-#         image: kariusdi/reactapp_microservice:v1.3
-#         ports:
-#         - containerPort: 5173
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
   labels:
     app: frontend
-    env: demo
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -51,22 +22,5 @@ spec:
       containers:
       - name: frontend
         image: kariusdi/reactapp_microservice:v1.3
-        imagePullPolicy: Always
-        env:
-          - name: REACT_APP_APIHOSTPORT
-            value: $API_ELB_PUBLIC_FQDN #add your API_Load_Balancer DNS manually here if app does not run
         ports:
         - containerPort: 5173
-        livenessProbe:
-          httpGet:
-            path: /ok
-            port: 5173
-          initialDelaySeconds: 2
-          periodSeconds: 5
-        readinessProbe:
-          httpGet:
-             path: /ok
-             port: 5173
-          initialDelaySeconds: 5
-          periodSeconds: 5
-          successThreshold: 1
