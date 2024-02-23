@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-origins = ["http://frontend"]
+origins = ["http://localhost:30330"]
 
 app.add_middleware(
     CORSMiddleware,
